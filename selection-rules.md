@@ -177,12 +177,14 @@ The reviews average **25–40 papers per month** across all journals. If a month
 > Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) for papers whose **online publication date** falls in `<month, year>` (the issue date does not count). First apply the priority picks in section 4.0: search for the group authors (P1) and the focal species (P2) across all journals, not only Tier A and B. Then apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results in this format. Start with an "## Important" section listing every priority pick, then the remaining papers grouped by journal:
 >
 > ```
-> **<Journal>** · <First author> et al. · *<Full paper title>* · <DOI link>
-> <One distilled sentence: the main finding.>
-> Topics: <topic names, e.g. Conservation genomics, Hybridisation & introgression>  |  Score: <n>  |  Tags: <own work, important species, or blank>
+> <n>. <Full paper title>
+>    <Journal> · <First author> et al.
+>    <DOI link>
+>    <One distilled sentence: the main finding.>
+>    Topics: <topic names, e.g. Conservation genomics, Hybridisation & introgression> | Score: <n> | Tags: <own work, important species, or blank>
 > ```
 >
-> Keep entries short: one sentence, topic names instead of T-codes. Use "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
+> Keep entries short: one sentence, topic names instead of T-codes. Number entries within each section, put each field on its own line and leave a blank line between entries. Deliver a plain-text copy (.txt) for copy-pasting alongside the markdown. Use "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
 
 ---
 
