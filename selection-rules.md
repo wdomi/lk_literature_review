@@ -107,6 +107,23 @@ Topics are listed by how often they drive a selection, strongest first. Keywords
 
 ## 4. Selection rules
 
+### 4.0 Priority picks (checked first, override everything below)
+
+These two rules are applied before the hard includes, conditional includes and hard excludes. A paper that matches either one is always kept, regardless of journal tier, topic or score, and is listed at the top of the month's results under "Important".
+
+**P1. Own work.** Any paper with **Lukas Keller**, **Iris Biebach** or **Alice Brambilla** among the authors, in any position and in any journal (Tier A, Tier B or not listed). Match name variants such as `Keller LF`, `Keller, L. F.`, `L.F. Keller`, `Biebach I`, `Brambilla A`; check the affiliation or topic when a common surname (e.g. Keller) is ambiguous. Tag: `own work`.
+
+**P2. Important species.** Any paper whose title, abstract or keywords concern one of the group's focal species, in any journal and on any topic within the broad scope of section 1 (still drop items caught by the hard excludes in 4.3, e.g. errata or clinical work). Tag: `important species`.
+
+| Species | Names and synonyms to match |
+|---|---|
+| Alpine ibex | `ibex`, `Alpine ibex`, `Capra ibex`, also other ibex (`Iberian ibex`, `Capra pyrenaica`, `Nubian ibex`, `Capra nubiana`, `Siberian ibex`, `Capra sibirica`, `Walia ibex`, `Capra walie`) |
+| Song sparrow | `song sparrow`, `song sparrows`, `Melospiza melodia`, `Mandarte Island` |
+| Bearded vulture | `bearded vulture`, `lammergeier`, `lammergeyer`, `Gypaetus barbatus` |
+| White-throated dipper | `Cinclus cinclus`, `white-throated dipper`, `Eurasian dipper`, `dipper`, `Wasseramsel`, also other `Cinclus` species |
+
+A paper can carry both tags (e.g. own work on ibex). Report priority picks with their normal score for reference, but they are never dropped for a low score and do not count towards the volume cutoff in 4.5.
+
 ### 4.1 Hard includes (select whenever the journal is in scope)
 
 1. Study combines **genomic data with a conservation or management question** in a wild population (T1 + T2).
@@ -137,7 +154,7 @@ Topics are listed by how often they drive a selection, strongest first. Keywords
 
 ### 4.4 Scoring, for ranking within a month
 
-Score each candidate 0–6 and report the score:
+Score each candidate 0–6 and report the score (priority picks from 4.0 are scored too, but kept regardless of the result):
 
 - +2 topic falls in T1–T5
 - +1 topic falls in T6–T14
@@ -147,17 +164,17 @@ Score each candidate 0–6 and report the score:
 - +1 broad conceptual significance (would be discussed beyond its own subfield)
 - −2 matches a conditional-include category with no genetic/evolutionary/quantitative hook
 
-Report everything scoring ≥ 3; report score 2 items only in a short "borderline" list; drop ≤ 1.
+Report everything scoring ≥ 3; report score 2 items only in a short "borderline" list; drop ≤ 1. Priority picks (4.0) are exempt from this cutoff.
 
 ### 4.5 Volume guidance
 
-The reviews average **25–40 papers per month** across all journals. If a month yields far more, raise the cutoff to score ≥ 4 rather than dropping journals, so that coverage stays even.
+The reviews average **25–40 papers per month** across all journals. If a month yields far more, raise the cutoff to score ≥ 4 rather than dropping journals, so that coverage stays even. Never apply the raised cutoff to priority picks.
 
 ---
 
 ## 5. Task prompt for the monthly run
 
-> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) published in `<month, year>`. Apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results grouped by journal, in this format:
+> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) published in `<month, year>`. First apply the priority picks in section 4.0: search for the group authors (P1) and the focal species (P2) across all journals, not only Tier A and B. Then apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results in this format. Start with an "## Important" section listing every priority pick, then the remaining papers grouped by journal:
 >
 > ```
 > ## <Journal name> (Volume, Issue, Month Year)
@@ -165,10 +182,10 @@ The reviews average **25–40 papers per month** across all journals. If a month
 > <Author list>
 > <DOI link>
 > <One or two sentences: what was done and the main finding.>
-> Topics: <T-codes and keywords>  |  Score: <n>
+> Topics: <T-codes and keywords>  |  Score: <n>  |  Tags: <own work, important species, or blank>
 > ```
 >
-> Use "NONE" under a journal with nothing in scope. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
+> Use "NONE" under a journal with nothing in scope, and "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
 
 ---
 
