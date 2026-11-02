@@ -174,18 +174,15 @@ The reviews average **25–40 papers per month** across all journals. If a month
 
 ## 5. Task prompt for the monthly run
 
-> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) published in `<month, year>`. First apply the priority picks in section 4.0: search for the group authors (P1) and the focal species (P2) across all journals, not only Tier A and B. Then apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results in this format. Start with an "## Important" section listing every priority pick, then the remaining papers grouped by journal:
+> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) for papers whose **online publication date** falls in `<month, year>` (the issue date does not count). First apply the priority picks in section 4.0: search for the group authors (P1) and the focal species (P2) across all journals, not only Tier A and B. Then apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results in this format. Start with an "## Important" section listing every priority pick, then the remaining papers grouped by journal:
 >
 > ```
-> ## <Journal name> (Volume, Issue, Month Year)
-> ### <Full paper title>
-> <Author list>
-> <DOI link>
-> <One or two sentences: what was done and the main finding.>
-> Topics: <T-codes and keywords>  |  Score: <n>  |  Tags: <own work, important species, or blank>
+> **<Journal>** · <First author> et al. · *<Full paper title>* · <DOI link>
+> <One distilled sentence: the main finding.>
+> Topics: <topic names, e.g. Conservation genomics, Hybridisation & introgression>  |  Score: <n>  |  Tags: <own work, important species, or blank>
 > ```
 >
-> Use "NONE" under a journal with nothing in scope, and "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
+> Keep entries short: one sentence, topic names instead of T-codes. Use "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
 
 ---
 
