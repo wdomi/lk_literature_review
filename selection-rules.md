@@ -85,7 +85,7 @@ Topics are listed by how often they drive a selection, strongest first. Keywords
 
 **T5. Methods, software and genomic resources** — `R package`, `pipeline`, `benchmark`, `genome assembly`, `reference genome`, `pangenome`, `long-read`, `structural variant`, `variant calling`, `imputation`, `machine learning`, `deep learning`, `low-coverage sequencing`, `SNP array`, `target capture`, `museum specimen`, `historical DNA`
 
-**6. T6. Biodiversity assessment and monitoring technology** — `eDNA`, `environmental DNA`, `metabarcoding`, `biomonitoring`, `camera trap`, `bioacoustics`, `ecoacoustics`, `citizen science`, `iNaturalist`, `species distribution model`, `occupancy model`, `computer vision`
+**T6. Biodiversity assessment and monitoring technology** — `eDNA`, `environmental DNA`, `metabarcoding`, `biomonitoring`, `camera trap`, `bioacoustics`, `ecoacoustics`, `citizen science`, `iNaturalist`, `species distribution model`, `occupancy model`, `computer vision`
 
 **T7. Domestication, breeding and agrobiodiversity** — `domestication`, `livestock`, `breed`, `crop`, `landrace`, `signatures of selection in domestic`, `dog`, `cattle`, `sheep`, `horse`, `yeast`
 
@@ -170,6 +170,20 @@ Report everything scoring ≥ 3; report score 2 items only in a short "borderlin
 
 The reviews average **25–40 papers per month** across all journals. If a month yields far more, raise the cutoff to score ≥ 4 rather than dropping journals, so that coverage stays even. Never apply the raised cutoff to priority picks.
 
+### 4.6 Tags
+
+Add every tag that applies; tags do not affect the score. `own work` and `important species` come from the priority picks in 4.0; the others are:
+
+| Tag | Use when the paper… |
+|---|---|
+| `#ibex` | studies ibex or other *Capra* species (wild goats) |
+| `#amphibians` | studies frogs, toads, salamanders, newts or caecilians |
+| `#plants` | studies any plant taxon |
+| `#methods` | presents a new method, software, R package, pipeline or benchmark |
+| `#review` | is a review, synthesis or meta-analysis |
+| `#opinion` | is a perspective, opinion, commentary or essay |
+| `#data` | releases a reusable dataset, database, reference genome or genomic resource |
+
 ---
 
 ## 5. Task prompt for the monthly run
@@ -181,7 +195,7 @@ The reviews average **25–40 papers per month** across all journals. If a month
 >    <Journal> · <First author> et al.
 >    <DOI link>
 >    <One distilled sentence: the main finding.>
->    Topics: <topic names, e.g. Conservation genomics, Hybridisation & introgression> | Score: <n> | Tags: <own work, important species, or blank>
+>    Topics: <topic names, e.g. Conservation genomics, Hybridisation & introgression> | Score: <n> | Tags: <own work, important species and any tags from 4.6, or blank>
 > ```
 >
 > Keep entries short: one sentence, topic names instead of T-codes. Number entries within each section, put each field on its own line and leave a blank line between entries. Deliver a plain-text copy (.txt) for copy-pasting alongside the markdown. Use "NONE" under Important if there are no priority picks this month. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
