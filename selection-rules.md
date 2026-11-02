@@ -85,7 +85,7 @@ Topics are listed by how often they drive a selection, strongest first. Keywords
 
 **T5. Methods, software and genomic resources** — `R package`, `pipeline`, `benchmark`, `genome assembly`, `reference genome`, `pangenome`, `long-read`, `structural variant`, `variant calling`, `imputation`, `machine learning`, `deep learning`, `low-coverage sequencing`, `SNP array`, `target capture`, `museum specimen`, `historical DNA`
 
-**6. T6. Biodiversity assessment and monitoring technology** — `eDNA`, `environmental DNA`, `metabarcoding`, `biomonitoring`, `camera trap`, `bioacoustics`, `ecoacoustics`, `citizen science`, `iNaturalist`, `species distribution model`, `occupancy model`, `computer vision`
+**T6. Biodiversity assessment and monitoring technology** — `eDNA`, `environmental DNA`, `metabarcoding`, `biomonitoring`, `camera trap`, `bioacoustics`, `ecoacoustics`, `citizen science`, `iNaturalist`, `species distribution model`, `occupancy model`, `computer vision`
 
 **T7. Domestication, breeding and agrobiodiversity** — `domestication`, `livestock`, `breed`, `crop`, `landrace`, `signatures of selection in domestic`, `dog`, `cattle`, `sheep`, `horse`, `yeast`
 
@@ -153,22 +153,35 @@ Report everything scoring ≥ 3; report score 2 items only in a short "borderlin
 
 The reviews average **25–40 papers per month** across all journals. If a month yields far more, raise the cutoff to score ≥ 4 rather than dropping journals, so that coverage stays even.
 
+### 4.6 Tags
+
+Add every tag that applies; tags do not affect the score.
+
+| Tag | Use when the paper… |
+|---|---|
+| `#ibex` | studies ibex or other *Capra* species (wild goats) |
+| `#amphibians` | studies frogs, toads, salamanders, newts or caecilians |
+| `#plants` | studies any plant taxon |
+| `#methods` | presents a new method, software, R package, pipeline or benchmark |
+| `#review` | is a review, synthesis or meta-analysis |
+| `#opinion` | is a perspective, opinion, commentary or essay |
+| `#data` | releases a reusable dataset, database, reference genome or genomic resource |
+
 ---
 
 ## 5. Task prompt for the monthly run
 
-> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) published in `<month, year>`. Apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, and return the results grouped by journal, in this format:
+> Using the journal list, topic taxonomy and selection rules in this file, screen the tables of contents of the Tier A journals (and Tier B where relevant) published in `<month, year>`. Apply the hard includes, conditional includes and hard excludes, score each selected paper per section 4.4, tag it per section 4.6, and return the results grouped by journal. Every paper starts with the arrow line, in exactly this order:
 >
 > ```
 > ## <Journal name> (Volume, Issue, Month Year)
-> ### <Full paper title>
-> <Author list>
-> <DOI link>
-> <One or two sentences: what was done and the main finding.>
-> Topics: <T-codes and keywords>  |  Score: <n>
+>
+> → <Full paper title> by <First author surname> et al. (<Journal name>) <DOI link>
+> <One sentence: what was done and the main finding.>
+> Topics: <T-codes and keywords>  |  Score: <n>  |  Tags: <#tag #tag>
 > ```
 >
-> Use "NONE" under a journal with nothing in scope. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
+> Write "Tags: none" when no tag from section 4.6 applies. Use "NONE" under a journal with nothing in scope. Add a final "Borderline" section for score-2 items, one line each with the reason they are borderline. Do not include author affiliations or the names of anyone who posted or recommended a paper.
 
 ---
 
@@ -178,4 +191,4 @@ The reviews average **25–40 papers per month** across all journals. If a month
 2. **Deliberately broad journals.** Nature, Science, PNAS, Current Biology and PLOS ONE entries include off-topic "for fun" picks (religion, diet and mortality, carbon budgets). I have treated those as not part of the profile. Say if you want a "general interest" slot kept.
 3. **Preprints.** bioRxiv appears a handful of times. Currently Tier B with a preprint flag — tell me to drop or promote it.
 4. **Taxonomic balance.** Mammals, birds, amphibians and fish dominate; insects, plants and marine invertebrates are thinner. If that reflects who was writing rather than the group's interests, the T-list should be rebalanced.
-5. **The abstract/summary line.** Later reviews include a one- or two-sentence plain summary per paper; earlier ones only keyword tags. The task prompt above asks for the summary style, which is the current practice.
+5. **The abstract/summary line.** Later reviews include a one- or two-sentence plain summary per paper; earlier ones only keyword tags. The task prompt above asks for a one-sentence summary per paper.
